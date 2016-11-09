@@ -6,7 +6,7 @@
     "library",
     "client"
   ],
-  "author": "Eeliya",
+  "author": "eeliya.rasta@gmail.com",
   "contributors": [],
   "dependencies": {
     "gsap": "^1.19.0"
