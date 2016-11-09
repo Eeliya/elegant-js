@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Elegant JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="external/web-animation.min.js"></script>
+    <!--    <script src="node_modules/gsap/src/minified/plugins/CSSPlugin.min.js"></script>
+        <script src="node_modules/gsap/src/minified/easing/EasePack.min.js"></script>
+        <script src="node_modules/gsap/src/minified/TweenLite.min.js"></script>-->
+    <script src="src/elegant.js"></script>
+
+    <script>
+      window.addEventListener('load', run);
+
+      function run() {
+        elegant.animations.add('item', {
+          enter: [
+            {
+              background: '#33ccff',
+            },
+            {
+              background: '#fff',
+              easing: 'ease-in-out'
+            }
+          ]
+        });
+
+        elegant.init();
+
+        var app = new Vue({
+          el: '#app',
+          data: {
+            title: 'Make your web page elegant!',
+            itemText: '',
+            list: [
+              'Nice',
+              'Gentle',
+              'Beautiful'
+            ]
+          },
+          methods: {
+            addItem: function (data) {
+              this.list.push(data);
+              this.itemText = null;
+            }
+          }
+        });
+      }
+
+    </script>
+  </head>
+  <body >
+
+    <section id="app">
+      <h1>{{ title }}</h1>
+      <p>
+        Elegant JS gives your HTML element a spirit
+      </p>
+      <p v-for="item in list" class="soft" elegant="item">
+        {{ item }}
+      </p>
+      <div>
+        <input v-model="itemText">
+        <button type="button" v-on:click="addItem(itemText)">
+          Add
+        </button>
+      </div>
+    </section>
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "elegant-js",
+  "version": "1.0.0",
+  "keywords": [
+    "animation",
+    "library",
+    "client"
+  ],
+  "author": "Eeliya",
+  "contributors": [],
+  "dependencies": {
+    "gsap": "^1.19.0"
+  }
+}
